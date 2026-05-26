@@ -1,4 +1,4 @@
-# Vue.js 및 프론트엔드 개발 기초 학습 노트
+# 프론트엔드와 렌더링 방식의 이해
 
 ## 🎯 학습 목표 (Objectives)
 *   **SPA**와 **CSR**의 개념과 현대 웹 개발에서의 역할을 설명한다.
@@ -73,6 +73,7 @@
 3.  JavaScript를 사용하여 **클라이언트 측에서 동적으로 콘텐츠를 생성하고 업데이트**합니다.
     *   👉 이러한 렌더링 방식을 **CSR (Client-Side Rendering)** 방식이라고 합니다.
 
+---
 
 ## 4. CSR (Client-Side Rendering)
 
@@ -128,79 +129,6 @@
 | **SPA** | Single Page Application | 단일 HTML에서 JS를 이용해 동적으로 화면을 교체함 |
 | **SSR** | Server-side Rendering | **서버에서 화면을 렌더링**하는 방식. 모든 데이터가 담긴 완성된 HTML을 클라이언트에 전달함 |
 | **CSR** | Client-side Rendering | **클라이언트(브라우저)에서 화면을 렌더링**하는 방식. |
-
----
-
-## 7. Vue.js 소개
-
-### Vue 란?
-*   사용자 인터페이스(UI)를 구축하기 위한 **JavaScript 프레임워크**입니다.
-*   레고 블록처럼 재사용 가능한 부품(**컴포넌트**)으로 화면을 조립합니다.
-*   데이터가 바뀌면 화면도 자동으로 바뀌는 **'반응성'**이 가장 큰 특징입니다.
-*   2014년 Evan You(전 Angular 개발팀)에 의해 발표되었으며, 현재 **최신 버전은 "Vue 3"** 입니다. *(학습 시 Vue 2 문서를 보지 않도록 주의!)*
-
-### Vue의 주요 특징
-1.  **반응형 데이터 바인딩:** 데이터 변경 시 UI가 자동으로 업데이트됩니다.
-2.  **컴포넌트 기반 아키텍처:** 재사용 가능한 UI 조각으로 화면을 구성합니다.
-3.  **간결한 문법과 직관적인 API:** 가독성이 높고 학습 곡선이 낮습니다.
-4.  **유연한 스케일링:** 작은 토이 프로젝트부터 대규모 애플리케이션까지 모두 적합합니다.
-
-### Vue를 학습하는 이유 (SSAFY 기준 포함)
-*   React나 Angular에 비해 **문법이 간결하고 직관적**이라 짧은 시간 내에 효율적으로 결과물을 만들 수 있습니다.
-*   잘 정리된 공식 문서와 활성화된 글로벌 커뮤니티 덕분에 풍부한 리소스와 예제를 얻기 쉽습니다.
-*   다양한 플러그인과 라이브러리를 제공하여 **확장성**이 매우 높습니다.
-
----
-
-## 8. Vue의 2가지 핵심 기능
-
-### 1. 선언적 렌더링 (Declarative Rendering)
-*   표준 HTML을 확장하는 Vue의 **"템플릿 구문(`{{ }}` 등)"**을 사용합니다.
-*   JavaScript 상태(데이터)를 기반으로 화면에 출력될 HTML을 **선언적**으로 작성합니다.
-*   *"이 데이터가 여기에 보여야 해"* 라고 선언만 하면 Vue가 알아서 그려줍니다.
-
-### 2. 반응성 (Reactivity)
-*   JavaScript **상태(데이터)의 변경을 추적**합니다.
-*   데이터에 변경사항이 발생하면 **자동으로 DOM을 업데이트**하여 화면을 바꿉니다.
-
----
-
-## 9. Vue 코드 체험하기 (Basic Example)
-
-아래는 CDN을 활용하여 Vue 3의 핵심 기능을 구현한 간단한 예시입니다.
-
-```html
-<!-- HTML 부분 (View) -->
-<div id="app">
-  <!-- 1. 선언적 렌더링: message 데이터가 바인딩 됨 -->
-  <h1>{{ message }}</h1>
-  
-  <!-- 2. 이벤트 처리 및 반응성: 클릭 시 count가 증가하고 화면이 자동 갱신됨 -->
-  <button v-on:click="count++">
-    Count is: {{ count }}
-  </button>
-</div>
-
-<!-- JavaScript 부분 (Logic) -->
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script>
-  const { createApp, ref } = Vue
-
-  const app = createApp({
-    setup() {
-      // ref()를 사용하여 '반응형 데이터' 생성
-      const message = ref('Hello vue!')
-      const count = ref(0)
-
-      // 템플릿(HTML)에서 사용할 데이터를 반환(return)
-      return {
-        message,
-        count
-      }
-    }
-  })
-
-  // id가 'app'인 요소에 Vue 앱을 연결(mount)
-  app.mount('#app')
-</script>
 ```
+
+---
